@@ -5,7 +5,8 @@ GCCFLAGS = -Wall -Wextra -Werror -Wpedantic -Wnull-dereference  -Wshadow -mavx2 
 C23 = -std=c++23
 INCLUDES = -I includes -I src 
 COMPILE.c = $(GCC) $(GCCFLAGS) $(INCLUDES) $(C23)
-
+COMPILEASM.o = nasm -f elf64 -g 
+COMPILEYASM.o = yasm -g dwarf2 -felf64
 vpath %.c src 
 vpath %.cc src 
 vpath %.cpp src 

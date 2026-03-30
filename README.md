@@ -1,5 +1,22 @@
-# Modern Parallel Programming in C++ 
+<br/>
+<br/>
 
-Here is the prograsmming in c++ and assembly have some fun with this 
+<p align="center">
+<img src="docs/image.svg" width="192" />
+</p>
+<br/>
+<p align="center">
+<a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Intel Docs</a> -
+<a href="https://www.agner.org/optimize/">Agner Manuals</a> -
+</p>
 
-Thank you Lord Jesus for life .
+<br/>
+<br/>
+
+> **⚠ Warning**<br>No code in this  environment is recommended for production please refer to the intel documetation .
+
+
+**A detailed Low Level** study and explotation of the x86-64 instruction set on the linux system V ABI 
+
+
+
