@@ -138,7 +138,24 @@ void AddU16_Iavx(XmmVal* c1 , XmmVal* c2, const XmmVal* a , const XmmVal* b){
 	// saturated unsigned addition 
 	_mm_stream_si128(std::bit_cast<__m128i*>(c2),_mm_adds_epu16( reg1, reg2));   
 }
+
+extern "C"{
+	static void SubI32();
+	static void SubI64();
+	
+};
+
+void SubI32_avx(XmmVal* c , const XmmVal*a , const XmmVal* b){
+	// subtracting a packed signed integrs 32 bits
+	__m128i p_ans = _mm_sub_epi32( _mm_load_si128 (std::bit_cast<__m128i*>(a)), _mm_load_si128 (std::bit_cast<__m128i*>(b)));
+	_mm_stream_si128(std::bit_cast<__m128i*>(c),p_ans);
+}
+void SubI64_avx(XmmVal* c , const XmmVal*a , const XmmVal* b){
+	// subtracting a packed signed integrs 32 bits
+	__m128i p_ans = _mm_sub_epi64( _mm_load_si128 (std::bit_cast<__m128i*>(a)), _mm_load_si128 (std::bit_cast<__m128i*>(b)));
+	_mm_stream_si128(std::bit_cast<__m128i*>(c),p_ans);
+}
 int main(){
-	AddI16();
-	AddU16();
+ 	SubI32();
+ 	SubI64();
 }
