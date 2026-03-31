@@ -22,11 +22,11 @@
       "src",
       "-std=c++23",
       "-o",
-      "a1",
-      "src/a1.cpp"
+      "a2",
+      "src/a2.cpp"
     ],
     "directory": "/home/paschalolo/studyWeb/ASSEM/moder_para",
-    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/a1.cpp",
-    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/a1"
+    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/a2.cpp",
+    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/a2"
   }
 ]
