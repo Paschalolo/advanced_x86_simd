@@ -13,9 +13,9 @@ vpath %.cpp src
 vpath %.h includes 
 
 run : $(MFILE) $(HARGS)
-	$(COMPILE.c) $<  -o $(FILE) && ./$(FILE)  
+	$(COMPILE.c) $<  -o ./bin/$(FILE) && ./bin/$(FILE)  
 
 create: 
 	touch src/$(MFILE)
 push : 
-	git add  . && git commit -m "mesas" && git push origin main
+	git add  . && git commit -m "update x86 sim DDD" && git push origin main
