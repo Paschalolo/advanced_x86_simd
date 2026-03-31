@@ -46,7 +46,7 @@ extern "C"{
 	void AddI16_Iavx(XmmVal* c1 , XmmVal* c2, const XmmVal* a , const XmmVal* b);
 	void AddU16_Iavx(XmmVal* c1 , XmmVal* c2, const XmmVal* a , const XmmVal* b);
 };
-static void AddI16(void){
+void AddI16(void){
 	XmmVal a, b, c1, c2 ; 
 	a.m_UI16[0] = 10 ; 
 	a.m_UI16[1] = 130 ; 
@@ -80,7 +80,7 @@ static void AddI16(void){
 }
 
 
-static void AddU16(void){
+ void AddU16(void){
 	XmmVal a, b, c1, c2 ; 
 	a.m_UI16[0] = 10 ; 
 	a.m_UI16[1] = 130 ; 
@@ -111,7 +111,7 @@ static void AddU16(void){
 	a.printString<uint16_t>() ;
 	b.printString<uint16_t>();
 	c2.printString<uint16_t>();
-}
+ }
 
 
 //-------------------------
@@ -154,6 +154,27 @@ void SubI64_avx(XmmVal* c , const XmmVal*a , const XmmVal* b){
 	// subtracting a packed signed integrs 32 bits
 	__m128i p_ans = _mm_sub_epi64( _mm_load_si128 (std::bit_cast<__m128i*>(a)), _mm_load_si128 (std::bit_cast<__m128i*>(b)));
 	_mm_stream_si128(std::bit_cast<__m128i*>(c),p_ans);
+}
+
+
+static void SubI32(){
+	XmmVal a, b ,c ; 
+	a.m_I32[0] = 100000 ; b.m_I32[0] = 100; 
+	a.m_I32[1] = 200 ; b.m_I32[1] = 20 ; 
+	a.m_I32[2] = -30; b.m_I32[2] = 30000; 
+	a.m_I32[3]  = 430000000; b.m_I32[3] = -900;
+	SubI32_avx(&c , &a , &b); 
+	c.printString<int32_t>();
+
+}
+static void SubI64(){
+
+	XmmVal a, b ,c ; 
+	a.m_I64[0] = 100000 ; b.m_I64[0] = 100; 
+	a.m_I64[1] = 200 ; b.m_I64[1] = 20 ; 
+	SubI64_avx(&c , &a , &b); 
+	c.printString<int64_t>();
+
 }
 int main(){
  	SubI32();
