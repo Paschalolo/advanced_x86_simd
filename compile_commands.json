@@ -1,0 +1,32 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++-14",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wpedantic",
+      "-Wnull-dereference",
+      "-Wshadow",
+      "-mavx2",
+      "-Wconversion",
+      "-Wduplicated-branches",
+      "-Wlogical-op",
+      "-O3",
+      "-Wformat=2",
+      "-pthread",
+      "-I",
+      "includes",
+      "-I",
+      "src",
+      "-std=c++23",
+      "-o",
+      "a1",
+      "src/a1.cpp"
+    ],
+    "directory": "/home/paschalolo/studyWeb/ASSEM/moder_para",
+    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/a1.cpp",
+    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/a1"
+  }
+]
