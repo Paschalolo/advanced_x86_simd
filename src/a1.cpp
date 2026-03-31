@@ -12,7 +12,7 @@ void __attribute__((noinline))calcz_avx1(float* z ,const float * x , const float
 	size_t i = 0 ; 
 	for(; (n-i) >= 16; i += 16){
 		__m256 total = 	 _mm256_add_ps (_mm256_load_ps (x+i),_mm256_load_ps (y+i) );
-		__m256 total1 = 	 _mm256_add_ps (_mm256_load_ps (x+i),_mm256_load_ps (y+i) );
+		__m256 total1 = 	 _mm256_add_ps (_mm256_load_ps (x+(i*2)),_mm256_load_ps (y+(i*2)) );
 		  _mm256_stream_ps (z+i,total);
 		  _mm256_stream_ps (z + (i*2),total1);
 	}
