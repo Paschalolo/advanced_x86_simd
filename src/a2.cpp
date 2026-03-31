@@ -24,11 +24,16 @@ struct __attribute__((aligned(16))) XmmVal{
 
 		template <typename T , size_t S = sizeof(T), size_t L = 16 / S>
 		void printString(){
-			size_t sz = 0 ; 
+			constexpr size_t  ss = L/2;
+			uint64_t data {m_UI64[0]};
+			uint64_t data1 {m_UI64[1]};
 			std::cout << "\n";
 			for(size_t i{0} ; i < L; ++i){
-				std::cout << *reinterpret_cast<T*>(&(m_UI8[0]) + sz) << " ";
-				sz += S ;
+				if (i < ss){
+					std::cout << static_cast<T>(data >> (i*16)) << " ";
+				}else{
+					std::cout << static_cast<T>(data1 >> ((i-ss )* 16)) << " ";
+				}
 			}
 			std::cout << std::endl ;
 		}
