@@ -7,6 +7,7 @@
 #include <iostream> 
 #include <bit>
 #include <immintrin.h>
+#include <mmintrin>
 struct __attribute__((aligned(16))) XmmVal{
 	public : 	
 		union {
@@ -157,7 +158,7 @@ void SubI64_avx(XmmVal* c , const XmmVal*a , const XmmVal* b){
 }
 
 
-static void SubI32(){
+[[maybe_unused]]static void SubI32(){
 	XmmVal a, b ,c ; 
 	a.m_I32[0] = 100000 ; b.m_I32[0] = 100; 
 	a.m_I32[1] = 200 ; b.m_I32[1] = 20 ; 
@@ -167,7 +168,7 @@ static void SubI32(){
 	c.printString<int32_t>();
 
 }
-static void SubI64(){
+[[maybe_unused]]static void SubI64(){
 
 	XmmVal a, b ,c ; 
 	a.m_I64[0] = 100000 ; b.m_I64[0] = 100; 
@@ -176,7 +177,33 @@ static void SubI64(){
 	c.printString<int64_t>();
 
 }
+
+// ---------------------------------------------------
+// Multuiplaication 
+// -------------------------------------------------------
+//
+// // integr bitwise logiacaql shift operations 
+
+
+// alignment should be on a 16 byte boundary 
+void AndU16_avx(XmmVal* c , const XmmVal* a , const XmmVal* b){
+	__m128i result = _mm_and_si128( _mm_load_si128(std::bit_cast<__m128i*>(a)),_mm_load_si128(std::bit_cast<__m128i*>(b)));
+	 _mm_stream_si128(std::bit_cast<__m128i*>(c), result);
+
+}
+// Alignedment should be on a 16 byte boundary 
+void orU16_avx(XmmVal* c , const XmmVal* a , const XmmVal* b){
+
+	__m128i result = _mm_or_si128( _mm_load_si128(std::bit_cast<__m128i*>(a)),_mm_load_si128(std::bit_cast<__m128i*>(b)));
+	 _mm_stream_si128(std::bit_cast<__m128i*>(c), result);
+}
+
+
+// alignement should be on a 16 byte boundary 
+void XorU16_avx(XmmVal* c , const XmmVal* a , const XmmVal* b){
+
+	__m128i result = _mm_xor_si128( _mm_load_si128(std::bit_cast<__m128i*>(a)),_mm_load_si128(std::bit_cast<__m128i*>(b)));
+	 _mm_stream_si128(std::bit_cast<__m128i*>(c), result);
+}
 int main(){
- 	SubI32();
- 	SubI64();
 }
