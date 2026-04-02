@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <bit>
+#include <iostream>
 #include <sys/types.h>
 struct ClipData{
 	uint8_t* m_PbSrc ; // source buffer poiunter 
@@ -16,13 +17,11 @@ struct ClipData{
 };
 
 
-extern "C" void ClipPixels_avx2(ClipData* clipdata);
-extern "C" void ClipPixels_cpp(ClipData* clipdata);
  // fake check alignemnt and args 
-bool check_args(ClipData* ){return true;}
+bool check_args(ClipData* ){return false;}
 
 
-void ClipPixels_avx2(ClipData* clipdata){
+void __attribute__((used)) ClipPixels_avx2(ClipData* clipdata){
 	if(check_args(clipdata))[[unlikely]]{
 		fprintf(stderr, "Failed data");
 		exit(1);}
@@ -70,7 +69,7 @@ void ClipPixels_avx2(ClipData* clipdata){
 	}
 	clipdata->m_NumclippedPixels = num_clipped_pixels;
 }
-void __attribute__((used))ClipPixels_cpp(ClipData* clipdata){
+void __attribute__((used,retain))ClipPixels_cpp(ClipData* clipdata){
 	if(check_args(clipdata))[[unlikely]]{
 		fprintf(stderr, "Failed data");
 		exit(1);
@@ -99,4 +98,6 @@ void __attribute__((used))ClipPixels_cpp(ClipData* clipdata){
 	clipdata->m_NumclippedPixels = num_clipped_pixels;
 }
 
-int main(){}
+int main(){
+	std::cout << "hey";
+}
