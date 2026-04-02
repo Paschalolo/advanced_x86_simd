@@ -44,8 +44,6 @@ struct __attribute__((aligned(32))) YmmVal{
 		}
 };
 
-void MathI16();
-void MathI32();
 static const std::string c_line(75,'-');
 
 int main(){
@@ -76,8 +74,8 @@ void MathI16_avx2(YmmVal c[6] , const YmmVal* a , const YmmVal * b ){
 
 void MathI32_avx2(YmmVal c[6] , const YmmVal* a , const YmmVal * b ){
 
-	 __m256i a_vals = _mm256_load_si256 (std::bit_cast<__m256i*>(a));	
-	 __m256i b_vals =_mm256_load_si256 (std::bit_cast<__m256i*>(b));
+	 __m256i a_vals = _mm256_load_si256(std::bit_cast<__m256i*>(a));	
+	 __m256i b_vals =_mm256_load_si256(std::bit_cast<__m256i*>(b));
 
 	 __m256i add_vals =  _mm256_add_epi32( a_vals, b_vals);
 	 __m256i min_vals =  _mm256_min_epi32( a_vals, b_vals);
@@ -94,13 +92,5 @@ void MathI32_avx2(YmmVal c[6] , const YmmVal* a , const YmmVal * b ){
 	_mm256_stream_si256(std::bit_cast<__m256i*>(&(c[4])) ,sub_vals);
 	_mm256_stream_si256(std::bit_cast<__m256i*>(&(c[5])) ,subs_vals);
 }
-void MathI32_avx2(YmmVal c[6] , const YmmVal* a , const YmmVal * b ){}
-void MathI16(){
-[[maybe_unused]]	YmmVal a , b , c[6] ;
-}
-void MathI32();
-}
-void MathI16(){
-[[maybe_unused]]	YmmVal a , b , c[6] ;
-}
-void MathI32();
+
+// unpacking and packing
