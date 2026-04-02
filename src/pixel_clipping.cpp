@@ -70,7 +70,7 @@ void ClipPixels_avx2(ClipData* clipdata){
 	}
 	clipdata->m_NumclippedPixels = num_clipped_pixels;
 }
-void ClipPixels_cpp(ClipData* clipdata){
+void __attribute__((used))ClipPixels_cpp(ClipData* clipdata){
 	if(check_args(clipdata))[[unlikely]]{
 		fprintf(stderr, "Failed data");
 		exit(1);
