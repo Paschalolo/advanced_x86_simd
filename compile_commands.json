@@ -22,11 +22,11 @@
       "src",
       "-std=c++23",
       "-o",
-      "./bin/pixel_clipping",
-      "src/pixel_clipping.cpp"
+      "./bin/least_sqaure",
+      "src/least_sqaure.cpp"
     ],
     "directory": "/home/paschalolo/studyWeb/ASSEM/moder_para",
-    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/pixel_clipping.cpp",
-    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/bin/pixel_clipping"
+    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/least_sqaure.cpp",
+    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/bin/least_sqaure"
   }
 ]
