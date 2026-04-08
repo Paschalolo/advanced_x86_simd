@@ -11,3 +11,9 @@ SECTION .text
 	xor eax ,  edi
 	not eax 
  	ret ; return to caller function 
+
+
+; Use RIP-relative memory addressing
+        default rel
+; Mark stack as non-executable for Binutils 2.39+
+        section .note.GNU-stack noalloc noexec nowrite progbits
