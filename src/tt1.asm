@@ -12,7 +12,7 @@ AddSubI32_a:
 	mov eax , 7 
 	add edi , esi 
 	add edx , ecx 
-	sub edi , ecx 
+	sub edi , edx 
 	add eax , edi 
 	ret ; return function back to main 
 	

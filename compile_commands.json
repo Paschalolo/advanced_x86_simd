@@ -16,17 +16,19 @@
       "-O3",
       "-Wformat=2",
       "-pthread",
+      "-mavx2",
       "-I",
       "includes",
       "-I",
       "src",
       "-std=c++23",
+      "./src/tt1_a.o",
       "-o",
-      "./bin/least_sqaure",
-      "src/least_sqaure.cpp"
+      "./bin/tt1",
+      "src/tt1.cpp"
     ],
     "directory": "/home/paschalolo/studyWeb/ASSEM/moder_para",
-    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/least_sqaure.cpp",
-    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/bin/least_sqaure"
+    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/tt1.cpp",
+    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/bin/tt1"
   }
 ]
