@@ -2,17 +2,7 @@
  ; Author : PAschal Ahanmisi 
  ; extern "C: int64_t sum_array(const int32_t* x , size_t n )
 SECTION .text
-	global sum_array 
-sum_array:
-	mov rcx , rsi
-	mov rdx , 0
-	mov rax , 0 
-.sub_loop: 
-	add eax , dword[rdi + rdx *4 ]
-	inc rdx 
-	loop
-	ret 
-
+	global calcu_array
 ; void calcu_array (int64_t* c , const int64_t* a , const int64_t* b , size_t n );
 ; c[i] = (a[i] * 25 ) / (b[i] + 10)
 calcu_array:
@@ -27,6 +17,7 @@ calcu_array:
 	idiv r9
 	mov qword[r10 + r8 * 8],rax
 	inc r8
-	loop 
+	sub rcx , 1 
+	jnz .sub_loop
 	xor rax , rax 
 	ret 
