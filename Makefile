@@ -1,7 +1,8 @@
 
 MFILE = $(FILE).cpp
+ASMFILE=$(FILE).asm
 GCC = g++-14
-GCCFLAGS = -Wall -Wextra -Werror -Wpedantic -Wnull-dereference  -Wshadow -mavx2 -Wconversion -Wduplicated-branches -Wlogical-op -O3  -Wformat=2   -pthread 
+GCCFLAGS = -Wall -Wextra -Werror -Wpedantic -Wnull-dereference  -Wshadow -mavx2 -Wconversion -Wduplicated-branches -Wlogical-op -O3  -Wformat=2   -pthread -mavx2 
 C23 = -std=c++23
 INCLUDES = -I includes -I src 
 COMPILE.c = $(GCC) $(GCCFLAGS) $(INCLUDES) $(C23)
