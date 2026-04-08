@@ -22,13 +22,13 @@
       "-I",
       "src",
       "-std=c++23",
-      "./src/tt2a_a.o",
+      "./src/tt2d_a.o",
       "-o",
-      "./bin/tt2a",
-      "src/tt2a.cpp"
+      "./bin/tt2d",
+      "src/tt2d.cpp"
     ],
     "directory": "/home/paschalolo/studyWeb/ASSEM/moder_para",
-    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/tt2a.cpp",
-    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/bin/tt2a"
+    "file": "/home/paschalolo/studyWeb/ASSEM/moder_para/src/tt2d.cpp",
+    "output": "/home/paschalolo/studyWeb/ASSEM/moder_para/bin/tt2d"
   }
 ]
