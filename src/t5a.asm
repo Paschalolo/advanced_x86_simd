@@ -8,8 +8,8 @@ SECTION .text
 	global CalcSphereVolSA_avx 
 
 CalcSphereVolSA_avx:
-	mov rax , 4 
-	mov rcx , 3
+	mov rax , 0x4 
+	mov rcx , 0x3
 	vmovq xmm5 , rax 
 	vmovq xmm6 , rcx
 	vmulss xmm0 , xmm0 , xmm0 ; r * r 
