@@ -17,7 +17,7 @@
 
 
 **A detailed Low Level** study and explotation of the x86-64 instruction set on the linux system V ABI. Hunting down details of AVX , AVX2 , AVX512 instruction sets . 
-Learning to use SIMD to significantly accelerate perfromance of computationally intense algorithms such as ML , image processing , computer graphics , statistics and matric arithmetic . 
+Learning to use SIMD to significantly accelerate perfromance of computationally intense algorithms such as ML , image processing , computer graphics , statistics and matric arithmetic. 
 
 
 
