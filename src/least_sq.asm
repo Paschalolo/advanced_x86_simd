@@ -6,9 +6,9 @@
   ;  const double* y<rcx>, size_t n, double epsilon);
 ;============================================================================
 %macro  REDUCEPD  4 ; 0->  destination  ymm 2 ->  xmm -1  xmmin-3  
-	vextractf128 %1, %2 ,1 
-	vaddpd  %1 , %3 , %1 
-	vhaddpd %0 , %1 , %1 
+	vextractf128 %2, %3 ,1 
+	vaddpd  %2 , %4 , %2 
+	vhaddpd %1 , %2 , %2 
 %endmacro
 SECTION .text
 	global _start 
@@ -70,7 +70,8 @@ cacls :
 	mov rax , 0x7fffffffffffffff
 	vmovq xmm0, rax 
 	vandpd xmm4 , xmm0 , xmm1
-	vcomisd xmm3 , xmm2 , xmm4 
+	vcomisd  xmm2 , xmm4
+	jb fin
 	vmovsd qword[rdi] , xmm3 
 	vmulsd xmm1 , xmm12 , xmm11 
 	vmulsd xmm2 , xmm13 , xmm10 
